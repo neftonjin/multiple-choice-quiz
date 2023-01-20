@@ -1,4 +1,4 @@
-const questions = [
+const questionsList = [
     {
       question: "The condition in an if / else statement is enclosed within ____.",
       answers: {

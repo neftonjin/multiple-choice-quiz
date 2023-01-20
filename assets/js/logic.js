@@ -2,10 +2,33 @@
   let elem = document.querySelector('#time');
   // let startBtn= document.querySelector('#submit');
   let count=75;
-  let button = document.getElementById("start");
+  let buttonId = document.getElementById("start");
+  let questionBox = document.getElementById("start-screen");
+  let questionId =document.getElementById("questions");
+  let questionTitleId = document.getElementById("question-title");
+  let questionChoicesId =document.getElementById("choices");
+  let choiceListId = document.getElementById("choiceList");
+
+
+
+ function display(element){
+  if (element.style.display === "none") {
+    element.style.display = "block";
+} else {
+  element.style.display = "none";
+}
+ }
+
 
 // Create the function that will be called when the button is clicked
-button.addEventListener("click", function() {
+
+buttonId.addEventListener("click", function() {
+     showQuestion();
+
+      display(buttonId);
+      display(questionBox);
+      display(questionId);
+     
   // Create a variable to hold the interval ID
   var intervalId;
 
@@ -25,17 +48,37 @@ button.addEventListener("click", function() {
   }, 1000);
 
   // Stop the interval when the button is clicked again
- 
+ currentQuestion++;
+ console.log(currentQuestion);
 });
-function myFunction(item) {
-  sum += item;
+
+// function myFunction(item) 
+//   sum += item;
+// 
+let currentQuestion = 0;
+console.log(currentQuestion);
+function showQuestion() { 
+
+
+questionTitleId.innerHTML = questionsList[currentQuestion].question;
+
+let answersValues = Object.values(questionsList[currentQuestion].answers); // Answer choices array
+console.log(answersValues);
+
+answersValues.forEach(function(ans){
+
+  let listItem = document.createElement("li");
+  listItem.setAttribute("class", "list-item"); //adding class to the answer option
+  console.log(ans);
+  listItem.textContent=ans;
+  choiceListId.appendChild(listItem);
 }
-let q = questions;
-console.log(questions)
-// let ans = q[i].answers;
-for( let i=0; i<q.length; i++){
-  // console.log(q[i]);
-  // console.log(q[i].question);
-   console.log( typeof q.answers )
-     
+)
+
+}
+
+function checkAnswer(){
+   
+  
+
 }
