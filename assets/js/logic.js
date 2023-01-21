@@ -106,13 +106,13 @@ function showQuestion() {
   let answersValues = Object.values(questionsList[currentQuestion].answers)
   listButton.textContent = answersValues[currentQuestion];
   questionTitleId.textContent = questionsList[currentQuestion].question;
-  option1.textContent = answersValues[0];
+  option1.textContent = "1."+ answersValues[0];
   option1.values = answersValues[0];
-  option2.textContent = answersValues[1];
+  option2.textContent = "2."+ answersValues[1];
   option2.values = answersValues[1];
-  option3.textContent = answersValues[2];
+  option3.textContent = "3."+ answersValues[2];
   option3.values = answersValues[2];
-  option4.textContent = answersValues[3];
+  option4.textContent = "4."+ answersValues[3];
   option4.values = answersValues[3];
 
   listButton.textContent = answersValues[currentQuestion];
