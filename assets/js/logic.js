@@ -75,7 +75,7 @@ let listButton = "";
 
 function showQuestion() {
   console.log("test show question");
-  console.log(currentQuestion + " currentquestion")
+  console.log(currentQuestion + " current question")
   console.log(currentQuestion + " questionsList.length")
   if (currentQuestion === questionsList.length) {
     display(questionId);
