@@ -1,23 +1,32 @@
-// const initialArray2=JSON.parse(localStorage.getItem("initials"));
-// const scoresArray2=JSON.parse(localStorage.getItem("highestScore"));
-// let storedScoreArray = JSON.parse(localStorage.getItem(scoreArray));
-
 
 let clearId=document.getElementById("clear");
 let hightScoresId = document.getElementById("highscores");
-// hightScoresId.textContent=localStorage.getItem("scoreArray");
 
-// let listScore = document.createElement("li");
-// hightScoresId.textContent=JSON.parse(localStorage.getItem("scoreArray")) ;
-// hightScoresId.appendChild(listScore);
-hightScoresId.textContent = localStorage.getItem("initials") + " - "+ localStorage.getItem("highestScore");
-console.log( localStorage.getItem("initials"));
 
-function clear (){
-    localStorage.setItem("scoreArray", "No scores yet");
-    localStorage.setItem("initials", "");
-    hightScoresId.textContent = "- No scores yet";
+//This function is showing all the scores 
+function showAllScores (){
+
     
+   
+    for( let i = 0; i < JSON.parse(localStorage.getItem("iniArray")).length; i++ ) { 
+        let li= document.createElement("li"); 
+        console.log("testing loop ");
+        li.textContent =  JSON.parse(localStorage.getItem("iniArray"))[i] +" "  + JSON.parse(localStorage.getItem("scArray"))[i];
+        hightScoresId.appendChild(li);
+   }
+
+
+
+
+  
+}   
+    
+showAllScores();
+
+
+//This function is clearing the localstorage API
+function clear (){
+    hightScoresId.textContent = localStorage.clear(); 
 }    
 
  clearId.addEventListener("click" , clear);
