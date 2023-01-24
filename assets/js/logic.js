@@ -58,7 +58,7 @@ let getScore = function  (){
   return scoreArray;
 }
 
-console.log("This is the score" + getScore());
+
 //------------------------------------------------------------------------------
 //This function is initializing the localstorage values 
 function init() {
@@ -67,7 +67,7 @@ function init() {
   
 }
 //------------------------------------------------------------------------------
-//This function is hidding or displaying based on the element class
+//This function is hiding or displaying based on the element class
 function display(element) {
   if (element.style.display === "none") {
     element.style.display = "block";
@@ -86,7 +86,7 @@ buttonId.addEventListener("click", function () {
   display(buttonId);
   display(questionBox);
   display(questionId);
-  checkAnswer();
+  // checkAnswer();
 
  
 
@@ -145,38 +145,57 @@ function showQuestion() {
     li.onclick=checkAnswer;
     questionChoicesContainer.appendChild(li);
   });
+  // console.log("testing");
 }
 
+
+function fadeOut(){
+  feedbackId.classList.add("fade-out");
+}
+// feedbackId.textContent="";
 //-----------------------------------------------------------------------------------
 //This function is checking the answers and compares them if they are correct or wrong
 function checkAnswer() {
-   
+  if (currentQuestionIndex <= 4){ 
   if (this.value === questionsList[currentQuestionIndex].correctAnswer) {
+
     feedbackId.textContent = "Correct Answer";
-    totalPoints += addPoint;
+
+    setTimeout(function(){ fadeOut()},2000);
    
+    totalPoints += addPoint;
+    
   } else {
+    feedbackId.textContent="";
     feedbackId.textContent = "Wrong Answer";
+   
     count -= 10;
+     setTimeout(function(){fadeOut()},2000);
+     
   }
+  
+}
 
-  currentQuestionIndex++;
-
-  if (currentQuestionIndex === questionsList.length) {
+  if (currentQuestionIndex === questionsList.length ) {
+    console.log("testing2" +  questionsList.length);
     return;
   }
   else{
+    console.log("testing" +  questionsList.length);
     showQuestion();
     
   }   
-  questionChoicesContainer.addEventListener("click", function (event) {
-    showQuestion();
-    showFinalScore();
-    
-
-  });
-
+  feedbackId.classList.remove("fade-out");
+  currentQuestionIndex++;
 }
+//This event is triggered when user clicks on the las question
+ //-------------------------------------------------------------
+questionChoicesContainer.addEventListener("click", function (event) {
+  showQuestion();
+  showFinalScore();
+  
+
+});
 //--------------------------------------------------------------------------------------
 
 //This function is displaying the total final score 
@@ -211,10 +230,3 @@ function redirect() {
   window.location.href = "highscores.html";
 }
 submit();
-
-function a (){ 
- for( let i =0; i<getInitial.length; i++){
-  console.log( test[i] + setInitial[i]);
- }}
-
- a();
