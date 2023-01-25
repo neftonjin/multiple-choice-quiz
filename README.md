@@ -34,6 +34,5 @@ https://neftonjin.github.io/multiple-choice-quiz/    Github Page
 <img width="1367" alt="Untitled" src="https://user-images.githubusercontent.com/25286630/214423350-b7756a3b-e113-4d40-9a48-59064f3b8937.png">
 <img width="1371" alt="Untitled2" src="https://user-images.githubusercontent.com/25286630/214423049-d0dcdda9-8c41-44ff-856d-e17e39f97baf.png">
 <img width="1347" alt="Untitled3" src="https://user-images.githubusercontent.com/25286630/214422788-ccdf6204-8568-4dae-9d78-94a9e23243bf.png">
-<img width="1367" alt="Untitled" src="https://user-images.githubusercontent.com/25286630/214465140-06db8c6c-7702-4ee7-955e-5a6da5efc994.png">
 <img width="1181" alt="Untitled4" src="https://user-images.githubusercontent.com/25286630/214465190-c2b4b1e3-bb92-40d1-a13b-270af9436040.png">
 
